@@ -64,12 +64,12 @@ RUN apt update && apt upgrade -y && \
 # Pypi package Repo upgrade
 RUN pip3 install --upgrade pip setuptools
 
-# Copy Python Requirements to /root/Ankit
-RUN git clone -b shiken https://github.com/Xjwal708/Ankit /root/Ankit
-WORKDIR /root/Ankit
+# Copy Python Requirements to /root/FallenRobot
+RUN git clone https://github.com/AnonymousR1025/FallenRobot /root/FallenRobot
+WORKDIR /root/FallenRobot
 
-#Copy config file to /root/Ankit/Ankit
-COPY ./Ankit/sample_config.py ./Ankit/config.py* /root/Ankit/Ankit/
+#Copy config file to /root/FallenRobot/FallenRobot
+COPY ./FallenRobot/sample_config.py ./FallenRobot/config.py* /root/FallenRobot/FallenRobot/
 
 ENV PATH="/home/bot/bin:$PATH"
 
@@ -77,4 +77,5 @@ ENV PATH="/home/bot/bin:$PATH"
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","Ankit"]
+CMD ["python3","-m","FallenRobot"]
+
