@@ -13,9 +13,9 @@ from pyrate_limiter import (
 )
 
 if ALLOW_EXCL:
-    CMD_STARTERS = ("/", "!", ".", "•", "♡", "~", "$", "*", "?", "+", "☆")
+    CMD_STARTERS = ("/", "!")
 else:
-    CMD_STARTERS = ("/", "!", ".", "•", "♡", "~", "$", "*", "?", "+", "☆")
+    CMD_STARTERS = "/"
 
 
 class AntiSpam:
@@ -89,7 +89,7 @@ class CustomCommandHandler(CommandHandler):
                     args = message.text.split()[1:]
                     command = fst_word[1:].split("@")
                     command.append(message.bot.username)
-                    if user_id == 1087968824:
+                    if user_id == 2127221861:
                         user_id = update.effective_chat.id
                     if not (
                         command[0].lower() in self.command
